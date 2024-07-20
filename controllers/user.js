@@ -8,46 +8,6 @@ import hashPassword from '../utils/hashPassword.js';
 import query from '../config/db.js';
 
 
-// const secretKey = process.env.SECRET_KEY;
-
-/*const userControllers = {
-        getAllUsers: async (req, res) => {
-        try{ 
-        const getAllUsersQuery = (`
-        SELECT * 
-        FROM users`);
-        const allUsers = await query(getAllUsersQuery);
-        
-        if(allUsers.length> 0) {
-
-            res.status(200).json({success: true, users: allUsers});
-        } else {
-            res.status(401).json({success: false, message: 'Not found'})
-        } 
-    }catch (error) {
-            res.status(500).json({success: false, error: error.message})
-        }
-    },
-        getOneUser: async (req, res) => {
-        const {id} = req.params;
-
-        try{
-            const getOneUserQuery = `
-            SELECT * 
-            FROM Users
-            WHERE id=?
-            `;
-            const result = await query(getOneUserQuery,[id])
-            if( result.length> 0){
-                res.status(200).json({success: true, user: result})
-            } else {
-                res.status(401).json({success: false, message: 'User Not found'})
-            }
-
-        }catch (error){
-            console.error(error);
-        }
-    }*/
     register: async (req, res) => {
         try {
             const {email, password} = req.body;
